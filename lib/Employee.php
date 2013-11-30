@@ -107,6 +107,10 @@ class Employee {
         $this->numSubordinates = $numSubordinates;
     }
 
+    /**
+     * Return an array of [name, bossName, distanceToCeo, numberOfSubordinates]
+     * @return array
+     */
     public function toArray() {
         return array($this->getName(), $this->getBossName(),
                      $this->getDistanceToCeo(), $this->getNumberOfSubordinates()
