@@ -40,9 +40,10 @@ $employeeGateway = new EmployeeGateway($db);
 $employeeGraph = new EmployeeGraph($employeeGateway);
 
 // Transform the employee list to be friendly to datatables
-$employeeList = array_map(function($employee) {
-    return $employee->toArray();
-}, $employeeGraph->getEmployees());
+$employeeList = array();
+foreach($employeeGraph as $employee) {
+    $employeeList[] = $employee->toArray();
+}
 
 header("Content-Type", "application/json");
 echo json_encode(array("aaData" => $employeeList));

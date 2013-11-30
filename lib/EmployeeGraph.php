@@ -15,7 +15,7 @@ require_once 'EmployeeGateway.php';
  * is fetched with just one query.  On my macbook pro, this equates to sub-second response time.
  *
  */
-class EmployeeGraph {
+class EmployeeGraph implements IteratorAggregate{
 
     /**
      * @var EmployeeGateway $gateway
@@ -32,6 +32,7 @@ class EmployeeGraph {
      * @var array list of employees
      */
     protected $employees = array();
+
 
     public function __construct(EmployeeGateway $gateway) {
         $this->gateway = $gateway;
@@ -95,6 +96,16 @@ class EmployeeGraph {
             }
         }
         $employee->setNumberOfSubordinates($count);
+    }
+
+    /**
+     * Retrieve an external iterator
+     * @link http://php.net/manual/en/iteratoraggregate.getiterator.php
+     * @return Traversable An instance of an object implementing <b>Iterator</b> or
+     * <b>Traversable</b>
+     */
+    public function getIterator() {
+       return new ArrayIterator($this->employees);
     }
 
 }
