@@ -3,7 +3,7 @@ require_once 'Employee.php';
 
 /**
  * Class EmployeeGateway
- * Responsible for all the database interation with regaurds to
+ * Responsible for all the database interaction with regards to
  * the employee table.
  */
 class EmployeeGateway {

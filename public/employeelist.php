@@ -11,7 +11,7 @@ require_once "../lib/EmployeeGraph.php";
 // Setup error handling
 
 // Use syslog for error logging, because if your op team is unhappy,
-// you"re gonna have a bad time
+// you're gonna have a bad time
 
 // LOG_PERROR will send the log messages to STDERR as well -- useful
 // if you"re using this from the command line.
