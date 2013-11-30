@@ -15,7 +15,7 @@ require_once "../lib/EmployeeGraph.php";
 
 // LOG_PERROR will send the log messages to STDERR as well -- useful
 // if you"re using this from the command line.
-openlog("orgchart", LOG_PERROR & LOG_ODELAY, LOG_LOCAL0);
+openlog("orgchart", LOG_PERROR | LOG_ODELAY, LOG_LOCAL0);
 
 function errorResponse($error) {
     header("Content-Type", "application/json");
